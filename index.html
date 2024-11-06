@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="postbaby">
 <meta name="twitter:description" content="Easily create, edit, and manage items with shortcuts for quick actions!">
 <meta name="twitter:image" content="https://www.postbaby.org/logotext.png">
-
+<button id="themeToggle">Toggle Theme</button>
 <body>
     <div class="logo-container">
         <img src="logotext.png" alt="logo" class="logo" draggable="false">
@@ -64,5 +64,29 @@
     <img src="tp.png" alt="trash" id="trash" class="trash" draggable="false">
     <script src="script.js"></script>
     <script src="strings.js"></script>
+<script>
+    const themeToggleButton = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Controlla il tema attuale e imposta il tema iniziale
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.add('light-mode');
+    }
+
+    themeToggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+
+        // Salva la preferenza dell'utente nel localStorage
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+
 </body>
 </html>

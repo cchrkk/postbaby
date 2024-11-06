@@ -293,7 +293,16 @@ h1 {
 .grid-item span {
     white-space: pre-wrap;
 }
+/* Light and Dark mode */
+.light-mode {
+    background-color: #ffffff; /* Colore di sfondo chiaro */
+    color: #000000; /* Colore del testo scuro */
+}
 
+.dark-mode {
+    background-color: #000000; /* Colore di sfondo scuro */
+    color: #ffffff; /* Colore del testo chiaro */
+}
 
 
 /* Media Query for Mobile (screen width less than 768px) */
